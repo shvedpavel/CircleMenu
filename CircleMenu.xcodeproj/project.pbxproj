@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B4036B97826ACC42A547367E /* Pods_CircleMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE97858076E8AD9FFA7052BF /* Pods_CircleMenu.framework */; };
+		E9043E9A2194348300D18B31 /* CircleMenuMainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9043E992194348300D18B31 /* CircleMenuMainButton.swift */; };
+		E9043E9C219434B700D18B31 /* BasicCircleMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9043E9B219434B700D18B31 /* BasicCircleMenuButton.swift */; };
+		E91C3EF221944EFA00BF777F /* CircleMenuPanGestureAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C3EF121944EFA00BF777F /* CircleMenuPanGestureAnalyzer.swift */; };
+		E920DD9F2194280500692D63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E920DD9E2194280500692D63 /* AppDelegate.swift */; };
+		E920DDA12194280500692D63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E920DDA02194280500692D63 /* ViewController.swift */; };
+		E920DDA42194280500692D63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E920DDA22194280500692D63 /* Main.storyboard */; };
+		E920DDA62194280700692D63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E920DDA52194280700692D63 /* Assets.xcassets */; };
+		E920DDA92194280700692D63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E920DDA72194280700692D63 /* LaunchScreen.storyboard */; };
+		E920DDB42194287400692D63 /* CircleMenuItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E920DDB32194287400692D63 /* CircleMenuItemModel.swift */; };
+		E920DDB621942E6B00692D63 /* CircleMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E920DDB521942E6B00692D63 /* CircleMenu.swift */; };
+		E92DE9F3219B0936002D6D66 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92DE9F2219B0936002D6D66 /* UIColorExtension.swift */; };
+		E92DE9F5219B4F87002D6D66 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92DE9F4219B4F87002D6D66 /* UIViewExtension.swift */; };
+		E93463B521997FB000950313 /* AnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93463B421997FB000950313 /* AnimationDelegate.swift */; };
+		E99DF4F72194542300630D06 /* hamburger-open.json in Resources */ = {isa = PBXBuildFile; fileRef = E99DF4F42194542300630D06 /* hamburger-open.json */; };
+		E99DF4F82194542300630D06 /* preloader-snake.json in Resources */ = {isa = PBXBuildFile; fileRef = E99DF4F52194542300630D06 /* preloader-snake.json */; };
+		E99DF4F92194542300630D06 /* hamburger-close.json in Resources */ = {isa = PBXBuildFile; fileRef = E99DF4F62194542300630D06 /* hamburger-close.json */; };
+		E99DF4FB2194674C00630D06 /* CircleMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99DF4FA2194674C00630D06 /* CircleMenuButton.swift */; };
+		E99DF4FD2194698500630D06 /* CircleButtonIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99DF4FC2194698500630D06 /* CircleButtonIndicator.swift */; };
+		E99DF4FF21947FF000630D06 /* CircleMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99DF4FE21947FF000630D06 /* CircleMenuDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7AC9B2D05F4E6E0EB316E708 /* Pods-CircleMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleMenu.release.xcconfig"; path = "Pods/Target Support Files/Pods-CircleMenu/Pods-CircleMenu.release.xcconfig"; sourceTree = "<group>"; };
+		9D55BFAFF147D1DBB90A25A8 /* Pods-CircleMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleMenu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CircleMenu/Pods-CircleMenu.debug.xcconfig"; sourceTree = "<group>"; };
+		BE97858076E8AD9FFA7052BF /* Pods_CircleMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CircleMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9043E992194348300D18B31 /* CircleMenuMainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMenuMainButton.swift; sourceTree = "<group>"; };
+		E9043E9B219434B700D18B31 /* BasicCircleMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCircleMenuButton.swift; sourceTree = "<group>"; };
+		E91C3EF121944EFA00BF777F /* CircleMenuPanGestureAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMenuPanGestureAnalyzer.swift; sourceTree = "<group>"; };
+		E920DD9B2194280500692D63 /* CircleMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E920DD9E2194280500692D63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E920DDA02194280500692D63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E920DDA32194280500692D63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E920DDA52194280700692D63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E920DDA82194280700692D63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E920DDAA2194280700692D63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E920DDB32194287400692D63 /* CircleMenuItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMenuItemModel.swift; sourceTree = "<group>"; };
+		E920DDB521942E6B00692D63 /* CircleMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMenu.swift; sourceTree = "<group>"; };
+		E92DE9F2219B0936002D6D66 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		E92DE9F4219B4F87002D6D66 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		E93463B421997FB000950313 /* AnimationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationDelegate.swift; sourceTree = "<group>"; };
+		E99DF4F42194542300630D06 /* hamburger-open.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "hamburger-open.json"; sourceTree = "<group>"; };
+		E99DF4F52194542300630D06 /* preloader-snake.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "preloader-snake.json"; sourceTree = "<group>"; };
+		E99DF4F62194542300630D06 /* hamburger-close.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "hamburger-close.json"; sourceTree = "<group>"; };
+		E99DF4FA2194674C00630D06 /* CircleMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMenuButton.swift; sourceTree = "<group>"; };
+		E99DF4FC2194698500630D06 /* CircleButtonIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonIndicator.swift; sourceTree = "<group>"; };
+		E99DF4FE21947FF000630D06 /* CircleMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMenuDelegate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E920DD982194280500692D63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4036B97826ACC42A547367E /* Pods_CircleMenu.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A33911FD33407BFADD57E45A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE97858076E8AD9FFA7052BF /* Pods_CircleMenu.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B385DC372769A95224715A94 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D55BFAFF147D1DBB90A25A8 /* Pods-CircleMenu.debug.xcconfig */,
+				7AC9B2D05F4E6E0EB316E708 /* Pods-CircleMenu.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E920DD922194280500692D63 = {
+			isa = PBXGroup;
+			children = (
+				E920DDB02194281C00692D63 /* CircleMenuComponent */,
+				E920DD9D2194280500692D63 /* CircleMenu */,
+				E920DD9C2194280500692D63 /* Products */,
+				B385DC372769A95224715A94 /* Pods */,
+				A33911FD33407BFADD57E45A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E920DD9C2194280500692D63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E920DD9B2194280500692D63 /* CircleMenu.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E920DD9D2194280500692D63 /* CircleMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E920DD9E2194280500692D63 /* AppDelegate.swift */,
+				E920DDA02194280500692D63 /* ViewController.swift */,
+				E920DDA22194280500692D63 /* Main.storyboard */,
+				E920DDA52194280700692D63 /* Assets.xcassets */,
+				E920DDA72194280700692D63 /* LaunchScreen.storyboard */,
+				E920DDAA2194280700692D63 /* Info.plist */,
+			);
+			path = CircleMenu;
+			sourceTree = "<group>";
+		};
+		E920DDB02194281C00692D63 /* CircleMenuComponent */ = {
+			isa = PBXGroup;
+			children = (
+				E99DF4F32194541000630D06 /* Animations */,
+				E920DDB32194287400692D63 /* CircleMenuItemModel.swift */,
+				E920DDB521942E6B00692D63 /* CircleMenu.swift */,
+				E92DE9F2219B0936002D6D66 /* UIColorExtension.swift */,
+				E9043E992194348300D18B31 /* CircleMenuMainButton.swift */,
+				E9043E9B219434B700D18B31 /* BasicCircleMenuButton.swift */,
+				E91C3EF121944EFA00BF777F /* CircleMenuPanGestureAnalyzer.swift */,
+				E99DF4FA2194674C00630D06 /* CircleMenuButton.swift */,
+				E99DF4FC2194698500630D06 /* CircleButtonIndicator.swift */,
+				E99DF4FE21947FF000630D06 /* CircleMenuDelegate.swift */,
+				E93463B421997FB000950313 /* AnimationDelegate.swift */,
+				E92DE9F4219B4F87002D6D66 /* UIViewExtension.swift */,
+			);
+			path = CircleMenuComponent;
+			sourceTree = "<group>";
+		};
+		E99DF4F32194541000630D06 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				E99DF4F62194542300630D06 /* hamburger-close.json */,
+				E99DF4F42194542300630D06 /* hamburger-open.json */,
+				E99DF4F52194542300630D06 /* preloader-snake.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E920DD9A2194280500692D63 /* CircleMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E920DDAD2194280700692D63 /* Build configuration list for PBXNativeTarget "CircleMenu" */;
+			buildPhases = (
+				1D197FA05C82E41CD9EFEB73 /* [CP] Check Pods Manifest.lock */,
+				E920DD972194280500692D63 /* Sources */,
+				E920DD982194280500692D63 /* Frameworks */,
+				E920DD992194280500692D63 /* Resources */,
+				88B141C59703FDCADB35A287 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CircleMenu;
+			productName = CircleMenu;
+			productReference = E920DD9B2194280500692D63 /* CircleMenu.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E920DD932194280500692D63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Pavel Chehov";
+				TargetAttributes = {
+					E920DD9A2194280500692D63 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = E920DD962194280500692D63 /* Build configuration list for PBXProject "CircleMenu" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E920DD922194280500692D63;
+			productRefGroup = E920DD9C2194280500692D63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E920DD9A2194280500692D63 /* CircleMenu */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E920DD992194280500692D63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E99DF4F82194542300630D06 /* preloader-snake.json in Resources */,
+				E920DDA92194280700692D63 /* LaunchScreen.storyboard in Resources */,
+				E920DDA62194280700692D63 /* Assets.xcassets in Resources */,
+				E920DDA42194280500692D63 /* Main.storyboard in Resources */,
+				E99DF4F92194542300630D06 /* hamburger-close.json in Resources */,
+				E99DF4F72194542300630D06 /* hamburger-open.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D197FA05C82E41CD9EFEB73 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CircleMenu-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88B141C59703FDCADB35A287 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CircleMenu/Pods-CircleMenu-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-19/iOS/RevealServer.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CircleMenu/Pods-CircleMenu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E920DD972194280500692D63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E920DDA12194280500692D63 /* ViewController.swift in Sources */,
+				E99DF4FD2194698500630D06 /* CircleButtonIndicator.swift in Sources */,
+				E93463B521997FB000950313 /* AnimationDelegate.swift in Sources */,
+				E920DD9F2194280500692D63 /* AppDelegate.swift in Sources */,
+				E99DF4FF21947FF000630D06 /* CircleMenuDelegate.swift in Sources */,
+				E91C3EF221944EFA00BF777F /* CircleMenuPanGestureAnalyzer.swift in Sources */,
+				E920DDB621942E6B00692D63 /* CircleMenu.swift in Sources */,
+				E99DF4FB2194674C00630D06 /* CircleMenuButton.swift in Sources */,
+				E9043E9C219434B700D18B31 /* BasicCircleMenuButton.swift in Sources */,
+				E92DE9F5219B4F87002D6D66 /* UIViewExtension.swift in Sources */,
+				E920DDB42194287400692D63 /* CircleMenuItemModel.swift in Sources */,
+				E9043E9A2194348300D18B31 /* CircleMenuMainButton.swift in Sources */,
+				E92DE9F3219B0936002D6D66 /* UIColorExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E920DDA22194280500692D63 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E920DDA32194280500692D63 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E920DDA72194280700692D63 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E920DDA82194280700692D63 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E920DDAB2194280700692D63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E920DDAC2194280700692D63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E920DDAE2194280700692D63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D55BFAFF147D1DBB90A25A8 /* Pods-CircleMenu.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CircleMenu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eos.CircleMenu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E920DDAF2194280700692D63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AC9B2D05F4E6E0EB316E708 /* Pods-CircleMenu.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CircleMenu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eos.CircleMenu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E920DD962194280500692D63 /* Build configuration list for PBXProject "CircleMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E920DDAB2194280700692D63 /* Debug */,
+				E920DDAC2194280700692D63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E920DDAD2194280700692D63 /* Build configuration list for PBXNativeTarget "CircleMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E920DDAE2194280700692D63 /* Debug */,
+				E920DDAF2194280700692D63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E920DD932194280500692D63 /* Project object */;
+}

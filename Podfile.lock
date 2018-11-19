@@ -1,0 +1,32 @@
+PODS:
+  - lottie-ios (2.5.2)
+  - PromiseKit (6.5.2):
+    - PromiseKit/CorePromise (= 6.5.2)
+    - PromiseKit/Foundation (= 6.5.2)
+    - PromiseKit/UIKit (= 6.5.2)
+  - PromiseKit/CorePromise (6.5.2)
+  - PromiseKit/Foundation (6.5.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.5.2):
+    - PromiseKit/CorePromise
+  - Reveal-SDK (19)
+
+DEPENDENCIES:
+  - lottie-ios
+  - PromiseKit (~> 6.0)
+  - Reveal-SDK
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - lottie-ios
+    - PromiseKit
+    - Reveal-SDK
+
+SPEC CHECKSUMS:
+  lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
+  PromiseKit: 27c1601bfb73405871b805bcb8cf7e55c4dad3db
+  Reveal-SDK: 9f0d2c6c12eb7507921e5454ac165b7aa21140a4
+
+PODFILE CHECKSUM: 1e00cd4b67555cf61856ce51fec3791b60c6a77e
+
+COCOAPODS: 1.5.3
