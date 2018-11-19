@@ -3,7 +3,6 @@
 //  CircleMenu
 //
 //  Created by Pavel Chehov on 08/11/2018.
-//  Copyright © 2018 Pavel Chehov. All rights reserved.
 //
 
 import UIKit
@@ -452,7 +451,6 @@ public class CircleMenu: UIView {
     
     private func startMoveSpringEffect(angle: Double) -> Promise<Void> {
         return Promise { seal in
-            
             let firstAnimation = CASpringAnimation()
             firstAnimation.keyPath = "transform.rotation.z"
             firstAnimation.fromValue = 0

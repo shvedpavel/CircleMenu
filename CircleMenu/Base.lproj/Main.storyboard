@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k8t-1G-i2Q">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="yl3-Th-1Gl">
+            <objects>
+                <navigationController id="k8t-1G-i2Q" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4E4-kx-jHx">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NsI-yc-h6n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WSP-hB-yIi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-679" y="33"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -32,13 +48,47 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="bnC-ab-hfV"/>
                     <connections>
                         <outlet property="idLabel" destination="YF0-Lo-f5O" id="2Kh-M6-Qhk"/>
+                        <segue destination="hTS-V5-etl" kind="show" identifier="showItem" id="LNF-27-NdF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="93.599999999999994" y="32.833583208395808"/>
+        </scene>
+        <!--Menu Item View Controller-->
+        <scene sceneID="zQA-eS-o6w">
+            <objects>
+                <viewController id="hTS-V5-etl" customClass="MenuItemViewController" customModule="CircleMenu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ufb-Bs-YUp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DV5-7g-3dg">
+                                <rect key="frame" x="62.5" y="208.5" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="33l-ZY-vVH"/>
+                                    <constraint firstAttribute="height" constant="250" id="wty-7b-Szg"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DV5-7g-3dg" firstAttribute="centerX" secondItem="ufb-Bs-YUp" secondAttribute="centerX" id="h0Q-mS-cc1"/>
+                            <constraint firstItem="DV5-7g-3dg" firstAttribute="centerY" secondItem="ufb-Bs-YUp" secondAttribute="centerY" id="khN-gS-qSY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="g45-QF-rbO"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Cdl-ud-GG2"/>
+                    <connections>
+                        <outlet property="imageView" destination="DV5-7g-3dg" id="C5H-hL-hXO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SPv-5x-KJI" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="812" y="33"/>
         </scene>
     </scenes>
 </document>

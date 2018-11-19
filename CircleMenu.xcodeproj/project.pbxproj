@@ -21,6 +21,7 @@
 		E92DE9F3219B0936002D6D66 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92DE9F2219B0936002D6D66 /* UIColorExtension.swift */; };
 		E92DE9F5219B4F87002D6D66 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92DE9F4219B4F87002D6D66 /* UIViewExtension.swift */; };
 		E93463B521997FB000950313 /* AnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93463B421997FB000950313 /* AnimationDelegate.swift */; };
+		E9561F1721A2F04A00FF26E2 /* MenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9561F1621A2F04A00FF26E2 /* MenuItemViewController.swift */; };
 		E99DF4F72194542300630D06 /* hamburger-open.json in Resources */ = {isa = PBXBuildFile; fileRef = E99DF4F42194542300630D06 /* hamburger-open.json */; };
 		E99DF4F82194542300630D06 /* preloader-snake.json in Resources */ = {isa = PBXBuildFile; fileRef = E99DF4F52194542300630D06 /* preloader-snake.json */; };
 		E99DF4F92194542300630D06 /* hamburger-close.json in Resources */ = {isa = PBXBuildFile; fileRef = E99DF4F62194542300630D06 /* hamburger-close.json */; };
@@ -48,6 +49,7 @@
 		E92DE9F2219B0936002D6D66 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E92DE9F4219B4F87002D6D66 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		E93463B421997FB000950313 /* AnimationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationDelegate.swift; sourceTree = "<group>"; };
+		E9561F1621A2F04A00FF26E2 /* MenuItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewController.swift; sourceTree = "<group>"; };
 		E99DF4F42194542300630D06 /* hamburger-open.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "hamburger-open.json"; sourceTree = "<group>"; };
 		E99DF4F52194542300630D06 /* preloader-snake.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "preloader-snake.json"; sourceTree = "<group>"; };
 		E99DF4F62194542300630D06 /* hamburger-close.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "hamburger-close.json"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				E920DD9E2194280500692D63 /* AppDelegate.swift */,
 				E920DDA02194280500692D63 /* ViewController.swift */,
+				E9561F1621A2F04A00FF26E2 /* MenuItemViewController.swift */,
 				E920DDA22194280500692D63 /* Main.storyboard */,
 				E920DDA52194280700692D63 /* Assets.xcassets */,
 				E920DDA72194280700692D63 /* LaunchScreen.storyboard */,
@@ -250,7 +253,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CircleMenu/Pods-CircleMenu-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-19/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -258,7 +260,6 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +287,7 @@
 				E920DDB42194287400692D63 /* CircleMenuItemModel.swift in Sources */,
 				E9043E9A2194348300D18B31 /* CircleMenuMainButton.swift in Sources */,
 				E92DE9F3219B0936002D6D66 /* UIColorExtension.swift in Sources */,
+				E9561F1721A2F04A00FF26E2 /* MenuItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,61 +3,61 @@
 //  CircleMenu
 //
 //  Created by Pavel Chehov on 08/11/2018.
-//  Copyright © 2018 Pavel Chehov. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController, CircleMenuDelegate {
-    
-    var icons = [String:UIImage]()
+
+    var icons = [String]()
     let submenuIds = [2,3]
-    
+    let showItemSegueId = "showItem"
+    var selectedItemId: Int?
+
     @IBOutlet weak var idLabel: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        icons["icImage"] = UIImage(named: "icImage")
-        icons["icPanorama"] = UIImage(named: "icPanorama")
-        icons["icVideo"] = UIImage(named: "icVideo")
-        icons["icPhoto"] = UIImage(named: "icPhoto")
-        icons["icTimelapse"] = UIImage(named: "icTimelapse")
-        icons["icMacro"] = UIImage(named: "icMacro")
-        icons["icPortrait"] = UIImage(named: "icPortrait")
-        icons["icSeries"] = UIImage(named: "icSeries")
-        icons["icTimer"] = UIImage(named: "icTimer")
-        icons["icSixteenToNine"] = UIImage(named: "icSixteenToNine")
-        icons["icOneToOne"] = UIImage(named: "icOneToOne")
-        icons["icHDR"] = UIImage(named: "icHDR")
-        
+
+        icons.append(contentsOf: ["icImage", "icPanorama", "icVideo",
+        "icPhoto","icTimelapse","icMacro", "icPortrait", "icSeries", "icTimer",
+        "icSixteenToNine", "icOneToOne", "icHDR"])
+
         let circleMenu = CircleMenu()
-        
         circleMenu.attach(to: self)
         circleMenu.delegate = self
-        
-        //тут можно кастомизировать
         circleMenu.circleMenuItems = createCircleMenuItems(count: 4)
-//        circleMenu.focusedIconColor = UIColor.red
-//        circleMenu.unfocusedIconColor = UIColor.green
-//        circleMenu.focusedBackgroundColor = UIColor.black
-//        circleMenu.unfocusedBackgroundColor = UIColor.yellow
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+
     func menuItemSelected(id: Int) {
-        print(id)
         idLabel.text = "id: \(id)"
+        selectedItemId = id
+        guard id != 100, !submenuIds.contains(id) else {
+            return
+        }
+        performSegue(withIdentifier: showItemSegueId, sender: self)
     }
-    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == showItemSegueId, let selectedItemId = selectedItemId else {
+            return
+        }
+        let viewController = segue.destination as! MenuItemViewController
+        viewController.imageSource = icons[selectedItemId]
+    }
+
     private func createCircleMenuItems(count: Int) -> [CircleMenuItemModel] {
         var menuModels = [CircleMenuItemModel]()
         for i in 0..<count {
-            let modelIndex = icons.index(icons.startIndex, offsetBy: i)
-            let menuModel = CircleMenuItemModel(id: i, imageSource: icons[modelIndex].value)
+            let menuModel = CircleMenuItemModel(id: i, imageSource: UIImage.init(named: icons[i]))
             if submenuIds.contains(i){
                 for j in  9..<12 {
-                    let submodelIndex = icons.index(icons.startIndex, offsetBy: j)
-                    let submenuModel = CircleMenuItemModel(id: j, imageSource: icons[submodelIndex].value)
+                    let submenuModel = CircleMenuItemModel(id: j, imageSource: UIImage.init(named: icons[j]))
                     menuModel.children!.append(submenuModel)
                 }
             }
@@ -66,4 +66,3 @@ class ViewController: UIViewController, CircleMenuDelegate {
         return menuModels
     }
 }
-
