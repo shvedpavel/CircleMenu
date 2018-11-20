@@ -1,3 +1,10 @@
+[![Version](https://img.shields.io/cocoapods/v/EGOCircleMenu.svg?style=flat)](https://cocoapods.org/pods/EGOCircleMenu)
+[![License](https://img.shields.io/cocoapods/l/EGOCircleMenu.svg?style=flat)](https://cocoapods.org/pods/EGOCircleMenu)
+[![Platform](https://img.shields.io/cocoapods/p/EGOCircleMenu.svg?style=flat)](https://cocoapods.org/pods/EGOCircleMenu)
+[![Total Downloads](https://img.shields.io/cocoapods/dt/EGOCircleMenu.svg?style=social)](http://cocoapods.org/pods/EGOCircleMenu)
+[![Monthly Downloads](https://img.shields.io/cocoapods/dm/EGOCircleMenu.svg?style=social)](http://cocoapods.org/pods/EGOCircleMenu)
+[![Weekly Downloads](https://img.shields.io/cocoapods/dw/EGOCircleMenu.svg?style=social)](http://cocoapods.org/pods/EGOCircleMenu)
+
 [![eGo-CMS](https://rawgithub.com/ego-cms/Resources/master/Badges_by_EGO/by_EGO.svg)](http://ego-cms.com/?utm_source=github)
 
 # CircleMenu
@@ -6,10 +13,12 @@
 ## Table of contents
 * [Introduction](../..#introduction)
 * [Requirements](../..#requirements)
+* [License](../..#license)
+* [Installation](../..#installation)
 * [Documentation](../..#documentation)
 * [Sample](../..#sample)
 
-<img src="Resources/animation.gif" width="400"/>&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/ego-cms/circlemenu/blob/master/Resources/animation.gif" width="400"/>&nbsp;&nbsp;&nbsp;
 
 Introduction
 -----------
@@ -20,7 +29,38 @@ Menu buttons move by a circular arc with a center in the center of the main menu
 
 Requirements
 -----------
-- iOS 11.4 and higher
+- iOS 11.0 and higher
+
+License
+-----------
+
+CircleMenu is available under the MIT license. See the LICENSE file for more info.
+
+Installation
+-----------
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+To integrate CircleMenu into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '11.0'
+use_frameworks!
+
+pod 'EGOCircleMenu'
+
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
 
 Documentation
 -----------
@@ -62,6 +102,8 @@ Sample
 -----------
 
 ```swift
+import EGOCircleMenu
+
 class ViewController: UIViewController, CircleMenuDelegate {
     var icons = [String]()
     let submenuIds = [2,3]
@@ -106,4 +148,4 @@ class ViewController: UIViewController, CircleMenuDelegate {
 }
 ```
 
-[![License](https://rawgit.com/ego-cms/Resources/master/License/license.svg)](LICENSE)
+[![License](https://rawgit.com/ego-cms/Resources/master/License/license.svg)](https://github.com/ego-cms/circlemenu/blob/master/LICENSE)

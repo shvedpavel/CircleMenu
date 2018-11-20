@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65828C7915768BF913727B06 /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65828E1FFB5662BBD56A0ED0 /* JsonReader.swift */; };
 		B4036B97826ACC42A547367E /* Pods_CircleMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE97858076E8AD9FFA7052BF /* Pods_CircleMenu.framework */; };
 		E9043E9A2194348300D18B31 /* CircleMenuMainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9043E992194348300D18B31 /* CircleMenuMainButton.swift */; };
 		E9043E9C219434B700D18B31 /* BasicCircleMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9043E9B219434B700D18B31 /* BasicCircleMenuButton.swift */; };
@@ -23,7 +24,6 @@
 		E93463B521997FB000950313 /* AnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93463B421997FB000950313 /* AnimationDelegate.swift */; };
 		E9561F1721A2F04A00FF26E2 /* MenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9561F1621A2F04A00FF26E2 /* MenuItemViewController.swift */; };
 		E99DF4F72194542300630D06 /* hamburger-open.json in Resources */ = {isa = PBXBuildFile; fileRef = E99DF4F42194542300630D06 /* hamburger-open.json */; };
-		E99DF4F82194542300630D06 /* preloader-snake.json in Resources */ = {isa = PBXBuildFile; fileRef = E99DF4F52194542300630D06 /* preloader-snake.json */; };
 		E99DF4F92194542300630D06 /* hamburger-close.json in Resources */ = {isa = PBXBuildFile; fileRef = E99DF4F62194542300630D06 /* hamburger-close.json */; };
 		E99DF4FB2194674C00630D06 /* CircleMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99DF4FA2194674C00630D06 /* CircleMenuButton.swift */; };
 		E99DF4FD2194698500630D06 /* CircleButtonIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99DF4FC2194698500630D06 /* CircleButtonIndicator.swift */; };
@@ -31,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65828E1FFB5662BBD56A0ED0 /* JsonReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
 		7AC9B2D05F4E6E0EB316E708 /* Pods-CircleMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleMenu.release.xcconfig"; path = "Pods/Target Support Files/Pods-CircleMenu/Pods-CircleMenu.release.xcconfig"; sourceTree = "<group>"; };
 		9D55BFAFF147D1DBB90A25A8 /* Pods-CircleMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CircleMenu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CircleMenu/Pods-CircleMenu.debug.xcconfig"; sourceTree = "<group>"; };
 		BE97858076E8AD9FFA7052BF /* Pods_CircleMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CircleMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,7 +52,6 @@
 		E93463B421997FB000950313 /* AnimationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationDelegate.swift; sourceTree = "<group>"; };
 		E9561F1621A2F04A00FF26E2 /* MenuItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewController.swift; sourceTree = "<group>"; };
 		E99DF4F42194542300630D06 /* hamburger-open.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "hamburger-open.json"; sourceTree = "<group>"; };
-		E99DF4F52194542300630D06 /* preloader-snake.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "preloader-snake.json"; sourceTree = "<group>"; };
 		E99DF4F62194542300630D06 /* hamburger-close.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "hamburger-close.json"; sourceTree = "<group>"; };
 		E99DF4FA2194674C00630D06 /* CircleMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMenuButton.swift; sourceTree = "<group>"; };
 		E99DF4FC2194698500630D06 /* CircleButtonIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonIndicator.swift; sourceTree = "<group>"; };
@@ -135,6 +135,7 @@
 				E99DF4FE21947FF000630D06 /* CircleMenuDelegate.swift */,
 				E93463B421997FB000950313 /* AnimationDelegate.swift */,
 				E92DE9F4219B4F87002D6D66 /* UIViewExtension.swift */,
+				65828E1FFB5662BBD56A0ED0 /* JsonReader.swift */,
 			);
 			path = CircleMenuComponent;
 			sourceTree = "<group>";
@@ -144,7 +145,6 @@
 			children = (
 				E99DF4F62194542300630D06 /* hamburger-close.json */,
 				E99DF4F42194542300630D06 /* hamburger-open.json */,
-				E99DF4F52194542300630D06 /* preloader-snake.json */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -209,7 +209,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E99DF4F82194542300630D06 /* preloader-snake.json in Resources */,
 				E920DDA92194280700692D63 /* LaunchScreen.storyboard in Resources */,
 				E920DDA62194280700692D63 /* Assets.xcassets in Resources */,
 				E920DDA42194280500692D63 /* Main.storyboard in Resources */,
@@ -288,6 +287,7 @@
 				E9043E9A2194348300D18B31 /* CircleMenuMainButton.swift in Sources */,
 				E92DE9F3219B0936002D6D66 /* UIColorExtension.swift in Sources */,
 				E9561F1721A2F04A00FF26E2 /* MenuItemViewController.swift in Sources */,
+				65828C7915768BF913727B06 /* JsonReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

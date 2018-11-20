@@ -137,8 +137,8 @@ public class CircleMenu: UIView {
             shadowView!.topAnchor.constraint(equalTo: rootView!.topAnchor),
             shadowView!.bottomAnchor.constraint(equalTo: rootView!.bottomAnchor),
             
-            buttonsAreaOnShadowView!.trailingAnchor.constraint(equalTo: shadowView!.trailingAnchor),
-            buttonsAreaOnShadowView!.bottomAnchor.constraint(equalTo: shadowView!.bottomAnchor),
+            buttonsAreaOnShadowView!.trailingAnchor.constraint(equalTo: rootView!.safeAreaLayoutGuide.trailingAnchor),
+            buttonsAreaOnShadowView!.bottomAnchor.constraint(equalTo: rootView!.safeAreaLayoutGuide.bottomAnchor),
             buttonsAreaOnShadowView!.widthAnchor.constraint(equalToConstant: CGFloat(menuSize)),
             buttonsAreaOnShadowView!.heightAnchor.constraint(equalToConstant: CGFloat(menuSize*2)),
             

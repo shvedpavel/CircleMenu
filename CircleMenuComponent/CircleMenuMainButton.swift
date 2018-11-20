@@ -15,8 +15,8 @@ public class CircleMenuMainButton: BasicCircleMenuButton {
     private let startScale: CGFloat = 0.85
     private let endScale: CGFloat = 1.0
     private let scaleDuration = 0.1
-    private let openAnimationKey = "hamburger-open.json"
-    private let closeAnimationKey = "hamburger-close.json"
+    private let openAnimationKey = "hamburger-open"
+    private let closeAnimationKey = "hamburger-close"
     private var mainbuttonOpenAnimation: LOTAnimationView
     private var mainButtonCloseAnimation: LOTAnimationView
     private var keyPaths: [LOTKeypath]

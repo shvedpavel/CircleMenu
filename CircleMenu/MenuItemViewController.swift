@@ -14,7 +14,7 @@ class MenuItemViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = UIImage.init(named: imageSource)
+        imageView.image = UIImage(named: imageSource)
         imageView.tintColor = UIColor.black
         navigationController?.isNavigationBarHidden = false
     }
