@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController, CircleMenuDelegate {
     
     var icons = [String]()
-    let submenuIds = [2,3]
+    let submenuIds = [2, 3]
     let showItemSegueId = "showItem"
     var selectedItemId: Int?
     
@@ -20,7 +20,7 @@ class ViewController: UIViewController, CircleMenuDelegate {
         super.viewDidLoad()
         
         icons.append(contentsOf: ["icImage", "icPanorama", "icVideo",
-                                  "icPhoto","icTimelapse","icMacro", "icPortrait", "icSeries", "icTimer",
+                                  "icPhoto", "icTimelapse", "icMacro", "icPortrait", "icSeries", "icTimer",
                                   "icSixteenToNine", "icOneToOne", "icHDR"])
         
         let circleMenu = CircleMenu()
@@ -53,11 +53,11 @@ class ViewController: UIViewController, CircleMenuDelegate {
     
     private func createCircleMenuItems(count: Int) -> [CircleMenuItemModel] {
         var menuModels = [CircleMenuItemModel]()
-        for i in 0..<count {
-            let menuModel = CircleMenuItemModel(id: i, imageSource: UIImage.init(named: icons[i]))
-            if submenuIds.contains(i){
-                for j in  9..<12 {
-                    let submenuModel = CircleMenuItemModel(id: j, imageSource: UIImage.init(named: icons[j]))
+        for ing in 0..<count {
+            let menuModel = CircleMenuItemModel(id: ing, imageSource: UIImage.init(named: icons[ing]))
+            if submenuIds.contains(ing) {
+                for jin in  9..<12 {
+                    let submenuModel = CircleMenuItemModel(id: jin, imageSource: UIImage.init(named: icons[jin]))
                     menuModel.children!.append(submenuModel)
                 }
             }

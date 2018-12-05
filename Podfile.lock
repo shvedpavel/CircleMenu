@@ -9,20 +9,24 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.5.3):
     - PromiseKit/CorePromise
+  - SwiftLint (0.29.1)
 
 DEPENDENCIES:
   - lottie-ios
   - PromiseKit (~> 6.0)
+  - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - lottie-ios
     - PromiseKit
+    - SwiftLint
 
 SPEC CHECKSUMS:
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   PromiseKit: c609029bdd801f792551a504c695c7d3098b42cd
+  SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
 
-PODFILE CHECKSUM: edd3c74231ba9f1a88fa795453b33101b453f4e6
+PODFILE CHECKSUM: 6b35bc58019413fcdcaa4f00e5807603ddd8baa0
 
 COCOAPODS: 1.5.3

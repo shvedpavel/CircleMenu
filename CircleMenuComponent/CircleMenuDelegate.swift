@@ -6,7 +6,8 @@
 //
 
 import Foundation
-
+// swiftlint:disable all
 public protocol CircleMenuDelegate {
     func menuItemSelected(id: Int)
 }
+// swiftlint:enable all

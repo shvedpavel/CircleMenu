@@ -157,6 +157,7 @@
 			buildConfigurationList = E920DDAD2194280700692D63 /* Build configuration list for PBXNativeTarget "CircleMenu" */;
 			buildPhases = (
 				1D197FA05C82E41CD9EFEB73 /* [CP] Check Pods Manifest.lock */,
+				FA85935421B7C9B40010B060 /* ShellScript */,
 				E920DD972194280500692D63 /* Sources */,
 				E920DD982194280500692D63 /* Frameworks */,
 				E920DD992194280500692D63 /* Resources */,
@@ -265,6 +266,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CircleMenu/Pods-CircleMenu-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		FA85935421B7C9B40010B060 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

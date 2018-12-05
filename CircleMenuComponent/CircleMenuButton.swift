@@ -85,7 +85,7 @@ public class CircleMenuButton: BasicCircleMenuButton {
         self.init(frame: CGRect.zero)
     }
     
-    public convenience init(positions: [CGPoint]){
+    public convenience init(positions: [CGPoint]) {
         self.init()
         self.positions = positions
     }

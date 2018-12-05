@@ -4,6 +4,7 @@
 //
 //  Created by Pavel Chehov on 08/11/2018.
 //
+// swiftlint:disable file_length
 
 import UIKit
 import PromiseKit
@@ -13,11 +14,11 @@ public class CircleMenu: UIView {
     private let maximumCountOfElements = 9
     private let visibleCountOfElements = 5
     private let maximumCountOfChildren = 5
-    private let mainButtonPadding:Double = 15
-    private let hintPadding:Double = 7
-    private let submenuElementMargin:Double = 10
-    private let submenuIndicatorMargin:Double = 15
-    private let menuSize:Double = 300
+    private let mainButtonPadding: Double = 15
+    private let hintPadding: Double = 7
+    private let submenuElementMargin: Double = 10
+    private let submenuIndicatorMargin: Double = 15
+    private let menuSize: Double = 300
     private let submenuButtonsStartTag = 500
     private let buttonPositionDistanceKoeff: Double = 130
     private let indicatorPositionDistanceKoeff: Double = 150
@@ -26,19 +27,17 @@ public class CircleMenu: UIView {
     private let buttonHintAnimationDuration = 0.4
     private let showSubmenuDuration = 0.1
     private let radius: Double = 96
-    private let _2degrees: Double = 0.0174533
-    private let _6degrees: Double = 0.10472
-    private let _45degrees: Double = 0.785398
-    private let _55degrees: Double = 0.959931
-    private let _360degrees: Double = 6.28
-    
+    private let degrees2: Double = 0.0174533
+    private let degrees6: Double = 0.10472
+    private let degrees45: Double = 0.785398
+    private let degrees55: Double = 0.959931
+    private let degrees360: Double = 6.28
     private var rootView: UIView?
     private var shadowView: UIView?
     private var buttonsAreaOnShadowView: UIView?
     private var panSwipe: UIPanGestureRecognizer?
     private var gestureAnalyzer: CircleMenuPanGestureAnalyzer?
     private var menuButtonsView: UIView?
-    
     private var mainButton: CircleMenuMainButton?
     private var menuButtons: [CircleMenuButton] = []
     private var buttonIndicators: [CircleButtonIndicator] = []
@@ -46,72 +45,60 @@ public class CircleMenu: UIView {
     private var indicatorPositions: [CGPoint] = []
     private var isSubmenuOpen = false
     private var isHintShown = false
-    
     public var circleMenuItems: [CircleMenuItemModel] = [] {
         willSet {
             precondition(newValue.count >= minimumCountOfElements && newValue.count <= maximumCountOfElements,
                          "Source must contain \(minimumCountOfElements) - \(maximumCountOfElements) elements")
         }
     }
-    
     private var isSwipeBlocked: Bool {
         return !mainButton!.isOpen || circleMenuItems.count == minimumCountOfElements || isSubmenuOpen
     }
-    
     public var focusedBackgroundColor: UIColor? {
         didSet {
             menuButtons.forEach { $0.focusedBackgroundColor = self.focusedBackgroundColor}
             buttonIndicators.forEach { $0.backgroundColor = self.focusedBackgroundColor}
         }
     }
-    
     public var unfocusedBackgroundColor: UIColor? {
         didSet {
             menuButtons.forEach { $0.unfocusedBackgroundColor = self.unfocusedBackgroundColor}
             mainButton?.backgroundColor = unfocusedBackgroundColor
         }
     }
-    
     public var focusedIconColor: UIColor? {
         didSet {
             menuButtons.forEach { $0.focusedIconColor = self.focusedIconColor}
         }
     }
-    
     public var unfocusedIconColor: UIColor? {
         didSet {
             menuButtons.forEach {$0.unfocusedIconColor = self.unfocusedIconColor}
             mainButton?.unfocusedIconColor = unfocusedIconColor
         }
     }
-    
     public var blackoutColor: UIColor? {
         didSet {
             shadowView?.backgroundColor = blackoutColor
         }
     }
-    
+    // swiftlint:disable all
     public var delegate: CircleMenuDelegate?
-    
     public func attach(to viewController: UIViewController) {
+    // swiftlint:enable all
         rootView = viewController.view
         self.translatesAutoresizingMaskIntoConstraints = false
-        
         shadowView = UIView()
         shadowView?.backgroundColor = UIColor.clear
         shadowView?.isHidden = true
         shadowView?.translatesAutoresizingMaskIntoConstraints = false
-        
         buttonsAreaOnShadowView = UIView()
         buttonsAreaOnShadowView?.backgroundColor = UIColor.clear
         buttonsAreaOnShadowView?.translatesAutoresizingMaskIntoConstraints = false
-        
         self.backgroundColor = UIColor.clear
-        
         gestureAnalyzer = CircleMenuPanGestureAnalyzer(view: rootView!)
         panSwipe = UIPanGestureRecognizer(target: self, action: #selector(panAction))
         rootView?.addGestureRecognizer(panSwipe!)
-        
         menuButtonsView = UIView()
         menuButtonsView?.backgroundColor = UIColor.clear
         menuButtonsView?.clipsToBounds = false
@@ -123,7 +110,6 @@ public class CircleMenu: UIView {
             menuButtonsView!.topAnchor.constraint(equalTo: self.topAnchor),
             menuButtonsView!.bottomAnchor.constraint(equalTo: self.bottomAnchor)
             ])
-    
         mainButton = CircleMenuMainButton()
         mainButton?.translatesAutoresizingMaskIntoConstraints = false
         rootView?.addSubview(shadowView!)
@@ -163,7 +149,7 @@ public class CircleMenu: UIView {
     }
     
     func fillButtonsPositions() {
-        var startAngle = -_55degrees
+        var startAngle = -degrees55
         let endAngle = 6.28 + startAngle
         let diff = (endAngle - startAngle) / Double(maximumCountOfElements)
         for _ in 0..<visibleCountOfElements {
@@ -176,14 +162,14 @@ public class CircleMenu: UIView {
     }
     
     private func fillLastButtonPosition() {
-        let x = cos(_45degrees) * menuSize + menuSize/2.0 - CircleMenuButton.size / 2.0
-        let y = sin(_45degrees) * menuSize + menuSize/2.0 - CircleMenuButton.size / 2.0
+        let x = cos(degrees45) * menuSize + menuSize/2.0 - CircleMenuButton.size / 2.0
+        let y = sin(degrees45) * menuSize + menuSize/2.0 - CircleMenuButton.size / 2.0
         buttonPositions.append(CGPoint(x: x, y: y))
     }
     
     private func fillIndicatorPositions() {
-        var startAngle = -_55degrees
-        let endAngle = _360degrees + startAngle
+        var startAngle = -degrees55
+        let endAngle = degrees360 + startAngle
         let diff = (endAngle - startAngle) / Double(maximumCountOfElements)
         for _ in 0..<visibleCountOfElements {
             let x = cos(startAngle) * buttonPositionDistanceKoeff + menuSize / 2.0 - CircleButtonIndicator.size / 2.0
@@ -195,8 +181,8 @@ public class CircleMenu: UIView {
     }
     
     private func fillLastIndicatorPosition() {
-        let x = cos(_45degrees) * indicatorPositionDistanceKoeff + menuSize / 2.0 - CircleButtonIndicator.size / 2.0
-        let y = sin(_45degrees) * indicatorPositionDistanceKoeff + menuSize / 2.0 - CircleButtonIndicator.size / 2.0
+        let x = cos(degrees45) * indicatorPositionDistanceKoeff + menuSize / 2.0 - CircleButtonIndicator.size / 2.0
+        let y = sin(degrees45) * indicatorPositionDistanceKoeff + menuSize / 2.0 - CircleButtonIndicator.size / 2.0
         indicatorPositions.append(CGPoint(x: x, y: y))
     }
     
@@ -213,10 +199,10 @@ public class CircleMenu: UIView {
     
     private func createMenuIndicators() {
         let position = indicatorPositions.last
-        for i in 0..<indicatorPositions.count {
+        for ing in 0..<indicatorPositions.count {
             let indicator = CircleButtonIndicator()
             indicator.position = position!
-            menuButtons[i].indicator = indicator
+            menuButtons[ing].indicator = indicator
             menuButtonsView?.insertSubview(indicator, at: 0)
             buttonIndicators.append(indicator)
         }
@@ -225,10 +211,10 @@ public class CircleMenu: UIView {
     private func setModelsForButtons() {
         menuButtons.forEach {$0.model = nil}
         switch circleMenuItems.count {
-            case minimumCountOfElements: setModelsForThreeButtons()
-            case 4: setModelsForFourButtons()
-            case let i where i > 4 : setModelsForMoreThenFourButtons()
-            default: break
+        case minimumCountOfElements : setModelsForThreeButtons()
+        case 4                      : setModelsForFourButtons()
+        case let ing where ing > 4  : setModelsForMoreThenFourButtons()
+        default                     : break
         }
     }
     
@@ -241,17 +227,17 @@ public class CircleMenu: UIView {
     }
     
     private func setModelsForFourButtons() {
-        for i in 0..<circleMenuItems.count {
-            menuButtons[i].model = circleMenuItems[i]
+        for ing in 0..<circleMenuItems.count {
+            menuButtons[ing].model = circleMenuItems[ing]
         }
         menuButtons[4].model = circleMenuItems[0]
     }
     
     private func setModelsForMoreThenFourButtons() {
-        var i = 0
-        while i < circleMenuItems.count && i < menuButtons.count {
-            menuButtons[i].model = circleMenuItems[i]
-            i+=1
+        var ing = 0
+        while ing < circleMenuItems.count && ing < menuButtons.count {
+            menuButtons[ing].model = circleMenuItems[ing]
+            ing+=1
         }
     }
     
@@ -294,16 +280,20 @@ public class CircleMenu: UIView {
     
     private func openMenu() {
         switchSwipeInteractions(enabled: false).cauterize()
-        menuButtonsView?.transform = CGAffineTransform(rotationAngle: CGFloat(-_6degrees))
+        menuButtonsView?.transform = CGAffineTransform(rotationAngle: CGFloat(-degrees6))
         firstly {
-            self.startOpenMenuAnimation()
-            }.then{
-                self.switchButtonsInteractions(enabled: false)
-            }.then{
-                self.startOpenSpringEffect(angle: -self._6degrees)
-            }.then{
+            self.startOpenMenuAnimation()}
+            .then {
+                
+                self.switchButtonsInteractions(enabled: false)}
+            .then {
+                
+                self.startOpenSpringEffect(angle: -self.degrees6)}
+            .then {
+                
                 self.startHintAnimationIfNeeded()
             }.done {
+                
                 self.switchButtonsInteractions(enabled: true).cauterize()
                 self.switchSwipeInteractions(enabled: true).cauterize()
         }.cauterize()
@@ -316,18 +306,18 @@ public class CircleMenu: UIView {
             resolver = seal
         }
         
-        let completion: (Bool) -> () = { b in
+        let completion: (Bool) -> Void = { bin in
             resolver?.fulfill(Void())
         }
         
-        for i in 0..<visibleCountOfElements {
-            let delay = menuOpenButtonAnimationDuration * Double(i)
-            for j in 0...i {
-                let positionIndex = i - j
-                if i == visibleCountOfElements - 1 && j == i {
-                    startMoveButtonAnimation(button: menuButtons[j], buttonPosition: buttonPositions[positionIndex], indicatorPosition: indicatorPositions[positionIndex], duration: menuOpenButtonAnimationDuration, delay: delay, completion: completion)
+        for ing in 0..<visibleCountOfElements {
+            let delay = menuOpenButtonAnimationDuration * Double(ing)
+            for jin in 0...ing {
+                let positionIndex = ing - jin
+                if ing == visibleCountOfElements - 1 && jin == ing {
+                    startMoveButtonAnimation(button: menuButtons[jin], buttonPosition: buttonPositions[positionIndex], indicatorPosition: indicatorPositions[positionIndex], duration: menuOpenButtonAnimationDuration, delay: delay, completion: completion)
                 } else {
-                    startMoveButtonAnimation(button: menuButtons[j], buttonPosition: buttonPositions[positionIndex], indicatorPosition: indicatorPositions[positionIndex], duration: menuOpenButtonAnimationDuration, delay: delay)
+                    startMoveButtonAnimation(button: menuButtons[jin], buttonPosition: buttonPositions[positionIndex], indicatorPosition: indicatorPositions[positionIndex], duration: menuOpenButtonAnimationDuration, delay: delay)
                 }
             }
         }
@@ -352,16 +342,16 @@ public class CircleMenu: UIView {
     private func closeAwaitableAnimationStep() -> Promise<Void> {
         return Promise { seal in
             var callbackSetted = false
-            for j in 0..<menuButtons.count {
-                let positionIndex = menuButtons[j].positionIndex!
+            for jin in 0..<menuButtons.count {
+                let positionIndex = menuButtons[jin].positionIndex!
                 if positionIndex == buttonPositions.count - 1 {
                     continue
                 }
                 let previousPositionIndex = positionIndex > 0 ? positionIndex - 1 : buttonPositions.count - 1
                 if callbackSetted {
-                    startMoveButtonAnimation(button: menuButtons[j], buttonPosition: buttonPositions[previousPositionIndex], indicatorPosition: indicatorPositions[previousPositionIndex], duration: menuOpenButtonAnimationDuration)
+                    startMoveButtonAnimation(button: menuButtons[jin], buttonPosition: buttonPositions[previousPositionIndex], indicatorPosition: indicatorPositions[previousPositionIndex], duration: menuOpenButtonAnimationDuration)
                 } else {
-                    startMoveButtonAnimation(button: menuButtons[j], buttonPosition: buttonPositions[previousPositionIndex], indicatorPosition: indicatorPositions[previousPositionIndex], duration: menuOpenButtonAnimationDuration, completion: {b in seal.fulfill(Void())})
+                    startMoveButtonAnimation(button: menuButtons[jin], buttonPosition: buttonPositions[previousPositionIndex], indicatorPosition: indicatorPositions[previousPositionIndex], duration: menuOpenButtonAnimationDuration, completion: {_ in seal.fulfill(Void())})
                     callbackSetted = true
                 }
             }
@@ -374,7 +364,7 @@ public class CircleMenu: UIView {
         }.then { _ in
             self.switchButtonsInteractions(enabled: false)
             }.then { _ in
-                self.startMoveSpringEffect(angle: -self._2degrees)
+                self.startMoveSpringEffect(angle: -self.degrees2)
             }.then { _ in
                 self.switchButtonsInteractions(enabled: true)
         }.cauterize()
@@ -384,14 +374,14 @@ public class CircleMenu: UIView {
         return Promise { seal in
             let zeroButtonPositionModel = menuButtons.first {$0.position == buttonPositions[0]}?.model
             let indexOfZeroButtonPositionModel = circleMenuItems.firstIndex {$0.id == zeroButtonPositionModel?.id }!
-            for i in 0..<menuButtons.count {
-                let positionIndex = buttonPositions.firstIndex(of: menuButtons[i].position!)!
+            for ing in 0..<menuButtons.count {
+                let positionIndex = buttonPositions.firstIndex(of: menuButtons[ing].position!)!
                 let nextPositionIndex = positionIndex != buttonPositions.count - 1 ? positionIndex + 1 : 0
                 if nextPositionIndex == 0 {
                     let indexOfNextModel = indexOfZeroButtonPositionModel < circleMenuItems.count - 1 ? indexOfZeroButtonPositionModel + 1 : 0
-                    menuButtons[i].model = circleMenuItems[indexOfNextModel]
+                    menuButtons[ing].model = circleMenuItems[indexOfNextModel]
                 }
-                startMoveButtonAnimation(button: menuButtons[i], buttonPosition: buttonPositions[nextPositionIndex], indicatorPosition: indicatorPositions[nextPositionIndex], duration: buttonMovementAnimationDuration, completion: {b in seal.fulfill(Void())})
+                startMoveButtonAnimation(button: menuButtons[ing], buttonPosition: buttonPositions[nextPositionIndex], indicatorPosition: indicatorPositions[nextPositionIndex], duration: buttonMovementAnimationDuration, completion: {_ in seal.fulfill(Void())})
             }
         }
     }
@@ -402,7 +392,7 @@ public class CircleMenu: UIView {
             }.then { _ in
                 self.switchButtonsInteractions(enabled: false)
             }.then { _ in
-                self.startMoveSpringEffect(angle: self._2degrees)
+                self.startMoveSpringEffect(angle: self.degrees2)
             }.then { _ in
                 self.switchButtonsInteractions(enabled: true)
         }.cauterize()
@@ -412,15 +402,15 @@ public class CircleMenu: UIView {
     private func moveRightAnimation() -> Promise<Void> {
          return Promise { seal in
             let lastbuttonPositionModel = menuButtons.first {$0.position == buttonPositions[4]}?.model
-            let indexOfLastButtonPositionModel = circleMenuItems.firstIndex{$0.id == lastbuttonPositionModel?.id}!
-            for i  in 0..<menuButtons.count {
-                let positionIndex = menuButtons[i].positionIndex!
+            let indexOfLastButtonPositionModel = circleMenuItems.firstIndex { $0.id == lastbuttonPositionModel?.id }!
+            for ing  in 0..<menuButtons.count {
+                let positionIndex = menuButtons[ing].positionIndex!
                 let previousPositionIndex = positionIndex != 0 ? positionIndex - 1 : buttonPositions.count - 1
                 if previousPositionIndex == 4 {
                     let indexOfPreviousModel = indexOfLastButtonPositionModel > 0 ? indexOfLastButtonPositionModel - 1 : circleMenuItems.count - 1
-                    menuButtons[i].model = circleMenuItems[indexOfPreviousModel]
+                    menuButtons[ing].model = circleMenuItems[indexOfPreviousModel]
                 }
-                startMoveButtonAnimation(button: menuButtons[i], buttonPosition: buttonPositions[previousPositionIndex], indicatorPosition: indicatorPositions[previousPositionIndex], duration: buttonMovementAnimationDuration, completion: {b in seal.fulfill(Void())})
+                startMoveButtonAnimation(button: menuButtons[ing], buttonPosition: buttonPositions[previousPositionIndex], indicatorPosition: indicatorPositions[previousPositionIndex], duration: buttonMovementAnimationDuration, completion: {_ in seal.fulfill(Void())})
             }
         }
     }
@@ -518,27 +508,27 @@ public class CircleMenu: UIView {
         var submenuButtons = [CircleMenuButton]()
         let buttonPosition = buttonPositions.firstIndex(of: invokedButton.position!)
         if buttonPosition == 3 {
-            xPosition = xPosition - CGFloat(CircleMenuButton.size) - CGFloat(submenuElementMargin)
-            yPosition = yPosition + CGFloat(CircleMenuButton.size) + CGFloat(submenuElementMargin)
+            xPosition  -= CGFloat(CircleMenuButton.size) - CGFloat(submenuElementMargin)
+            yPosition  += CGFloat(CircleMenuButton.size) + CGFloat(submenuElementMargin)
         }
-        var j = submenuButtonsStartTag
-        for i in 0..<children.count {
-            yPosition = yPosition - CGFloat(CircleMenuButton.size) - CGFloat(submenuElementMargin)
+        var jin = submenuButtonsStartTag
+        for ing in 0..<children.count {
+            yPosition -= CGFloat(CircleMenuButton.size) - CGFloat(submenuElementMargin)
             let button = CircleMenuButton()
-            button.model = children[i]
+            button.model = children[ing]
             button.frame = CGRect(x: xPosition, y: yPosition, width: CGFloat(CircleMenuButton.size), height: CGFloat(CircleMenuButton.size))
             button.alpha = 0
-            button.tag = j
+            button.tag = jin
             button.unfocusedBackgroundColor = self.unfocusedBackgroundColor ?? UIColor.white
             button.unfocusedIconColor = self.unfocusedIconColor ?? UIColor.black
             button.addTarget(self, action: #selector(onSubmenuTouchUpIside(_:)), for: .touchUpInside)
             submenuButtons.append(button)
-            j+=1
+            jin+=1
         }
         return submenuButtons
     }
     
-    private func openSubmenu(invokedButton: CircleMenuButton, submenuButtons:[CircleMenuButton]) -> Promise<Void> {
+    private func openSubmenu(invokedButton: CircleMenuButton, submenuButtons: [CircleMenuButton]) -> Promise<Void> {
         return Promise { seal in
             let convertedPosition = menuButtonsView!.convert(invokedButton.position!, to: buttonsAreaOnShadowView)
             invokedButton.frame.resize(x: convertedPosition.x, y: convertedPosition.y)
@@ -546,17 +536,18 @@ public class CircleMenu: UIView {
             let indicator = invokedButton.indicator!
             indicator.isHidden = true
             let lastButtonFrame = submenuButtons.last!.frame
-            indicator.frame.resize(x: lastButtonFrame.minX + lastButtonFrame.width/2 - indicator.frame.width / 2, y:lastButtonFrame.minY - CGFloat(submenuIndicatorMargin))
+            indicator.frame.resize (x: lastButtonFrame.minX + lastButtonFrame.width/2 - indicator.frame.width/2,
+                                    y: lastButtonFrame.minY - CGFloat (submenuIndicatorMargin))
             buttonsAreaOnShadowView!.insertSubview(indicator, at: buttonsAreaOnShadowView!.subviews.count)
             
             var promise: Promise<Void>?
-            for i in 0..<submenuButtons.count {
-                buttonsAreaOnShadowView!.addSubview(submenuButtons[i])
+            for ing in 0..<submenuButtons.count {
+                buttonsAreaOnShadowView!.addSubview(submenuButtons[ing])
                 if promise == nil {
-                    promise = startChangeAlphaAnimation(button: submenuButtons[i], alpha: 1, duration: self.showSubmenuDuration)
+                    promise = startChangeAlphaAnimation(button: submenuButtons[ing], alpha: 1, duration: self.showSubmenuDuration)
                 } else {
                     promise = promise?.then {_ in
-                        self.startChangeAlphaAnimation(button: submenuButtons[i], alpha: 1, duration: self.showSubmenuDuration)
+                        self.startChangeAlphaAnimation(button: submenuButtons[ing], alpha: 1, duration: self.showSubmenuDuration)
                     }
                 }
             }
@@ -574,7 +565,7 @@ public class CircleMenu: UIView {
             menuButtonsView!.insertSubview(invokedButton, at: menuButtonsView!.subviews.count)
             menuButtonsView!.insertSubview(invokedButton.indicator!, at: menuButtonsView!.subviews.count)
             invokedButton.isUserInteractionEnabled = false
-            let submenuButtons = buttonsAreaOnShadowView?.subviews.filter {$0.tag >= 0 && $0.tag <= submenuButtonsStartTag + maximumCountOfChildren && $0 is CircleMenuButton}.sorted{ $0.tag > $1.tag}
+            let submenuButtons = buttonsAreaOnShadowView?.subviews.filter { $0.tag >= 0 && $0.tag <= submenuButtonsStartTag + maximumCountOfChildren && $0 is CircleMenuButton}.sorted { $0.tag > $1.tag }
             
             guard let buttons = submenuButtons, buttons.count > 0 else {
                 return
@@ -582,17 +573,17 @@ public class CircleMenu: UIView {
             invokedButton.indicator?.isHidden = true
             
             var promise = startChangeAlphaAnimation(button: buttons[0] as! CircleMenuButton, alpha: 0, duration: showSubmenuDuration)
-            for i in 1..<buttons.count {
+            for ing in 1..<buttons.count {
                 promise = promise.then { _ in
-                    self.startChangeAlphaAnimation(button: buttons[i] as! CircleMenuButton, alpha: 0, duration: self.showSubmenuDuration)
+                    self.startChangeAlphaAnimation(button: buttons[ing] as! CircleMenuButton, alpha: 0, duration: self.showSubmenuDuration)
                 }
             }
             promise.done {
                     invokedButton.indicator?.resetPosition()
                     invokedButton.indicator?.isHidden = false
-                    buttons.forEach { b in
-                        b.removeFromSuperview()
-                        (b as! CircleMenuButton).removeTarget(self, action: #selector(self.onSubmenuTouchUpIside), for: .touchUpInside)
+                    buttons.forEach { bin in
+                        bin.removeFromSuperview()
+                        (bin as! CircleMenuButton).removeTarget(self, action: #selector(self.onSubmenuTouchUpIside), for: .touchUpInside)
                     }
                     invokedButton.isUserInteractionEnabled = true
                     seal.fulfill(Void())
@@ -604,7 +595,7 @@ public class CircleMenu: UIView {
         return Promise { seal in
             UIView.animate(withDuration: duration, animations: {
                 button.alpha = alpha
-            }, completion: {b in
+            }, completion: {_ in
                 seal.fulfill(Void())
             })
         }
@@ -612,7 +603,8 @@ public class CircleMenu: UIView {
     
     private func startHintAnimationIfNeeded() -> Promise<Void> {
         return Promise { seal in
-            let invokedButton = menuButtons.first{$0.positionIndex == 1}!
+            let invokedButton = menuButtons.first { $0.positionIndex == 1 }!
+            
             guard isHintShown == false, invokedButton.model!.hasChildren else {
                 seal.fulfill(Void())
                 return
@@ -639,7 +631,7 @@ public class CircleMenu: UIView {
                 invokedButton.indicator!.resetPosition()
                 hintViews[0].frame = invokedButton.frame
                 hintViews[1].frame = invokedButton.frame
-            }, completion: {b in
+            }, completion: {_ in
                 hintViews.forEach { $0.removeFromSuperview()}
                 self.isHintShown = true
                 seal.fulfill(Void())
@@ -656,7 +648,7 @@ public class CircleMenu: UIView {
         rootView?.insertSubview(self, at: (rootView?.subviews.count)!)
     }
     
-    private func startMoveButtonAnimation(button: CircleMenuButton, buttonPosition: CGPoint, indicatorPosition: CGPoint, duration: Double, delay: Double = 0, completion: ((Bool) -> ())? = nil) {
+    private func startMoveButtonAnimation(button: CircleMenuButton, buttonPosition: CGPoint, indicatorPosition: CGPoint, duration: Double, delay: Double = 0, completion: ((Bool) -> Void)? = nil) {
         UIView.animate(withDuration: duration, delay: delay, options: .curveEaseInOut, animations: {
             button.position = buttonPosition
             button.indicator?.position = indicatorPosition
@@ -681,7 +673,6 @@ public class CircleMenu: UIView {
             seal.fulfill(Void())
         }
     }
-    
     private func updateAppearance() {
         unfocusedBackgroundColor = UIColor.white
         focusedBackgroundColor = UIColor(red: 60, green: 109, blue: 240)
@@ -689,7 +680,6 @@ public class CircleMenu: UIView {
         unfocusedIconColor = UIColor(red: 51, green: 52, blue: 51)
         blackoutColor = UIColor(red: 246, green: 246, blue: 246).withAlphaComponent(0.64)
     }
-    
     override public func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let view = super.hitTest(point, with: event)
         if view == self || view == menuButtonsView {
@@ -699,4 +689,4 @@ public class CircleMenu: UIView {
         }
     }
 }
-
+// swiftlint:enable file_length

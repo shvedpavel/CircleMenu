@@ -8,9 +8,9 @@
 import UIKit
 
 class AnimationDelegate: NSObject, CAAnimationDelegate {
-    var callback: (() -> ())?
+    var callback: (() -> Void)?
     
-    convenience init(_ callback: @escaping ()->()) {
+    convenience init(_ callback: @escaping () -> Void) {
         self.init()
         self.callback = callback
     }

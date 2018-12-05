@@ -8,7 +8,7 @@
 import UIKit
 
 class CircleButtonIndicator: UIView {
-    static let size:Double = 6
+    static let size: Double = 6
     private var oldPosition: CGPoint = CGPoint.zero
     
     var position: CGPoint = CGPoint.zero {

@@ -8,4 +8,5 @@ target 'CircleMenu' do
   # Pods for CircleMenu
   pod 'lottie-ios'
   pod 'PromiseKit', '~> 6.0'
+  pod 'SwiftLint'
 end

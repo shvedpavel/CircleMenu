@@ -79,14 +79,14 @@ public class CircleMenuMainButton: BasicCircleMenuButton {
     @objc private func touchUpInside() {
         animateScale()
         if isOpen {
-                mainButtonCloseAnimation.play { finish in
+                mainButtonCloseAnimation.play { _ in
                 self.mainButtonCloseAnimation.isHidden = true
                 self.mainbuttonOpenAnimation.isHidden = false
                 self.mainButtonCloseAnimation.stop()
                 self.isOpen = !self.isOpen
             }
         } else {
-            mainbuttonOpenAnimation.play { finish in
+            mainbuttonOpenAnimation.play { _ in
                 self.mainbuttonOpenAnimation.isHidden = true
                 self.mainButtonCloseAnimation.isHidden = false
                 self.mainbuttonOpenAnimation.stop()
@@ -98,7 +98,7 @@ public class CircleMenuMainButton: BasicCircleMenuButton {
     private func animateScale() {
         UIView.animate(withDuration: scaleDuration, animations: {
             self.transform = CGAffineTransform.init(scaleX: self.startScale, y: self.startScale)
-        }, completion: { b in
+        }, completion: { _ in
             UIView.animate(withDuration: self.scaleDuration, animations: {
                 self.transform = CGAffineTransform.init(scaleX: self.endScale, y: self.endScale)
             })

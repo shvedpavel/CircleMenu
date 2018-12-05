@@ -1,0 +1,27 @@
+disabled_rules: # rule identifiers to exclude from running
+  - trailing_whitespace
+  - trailing_newline
+  - force_cast
+  - vertical_whitespace
+  - nesting
+type_body_length:
+ warning: 600
+ error: 700
+line_length:
+ warning: 300
+ error: 400
+type_name:
+    min_length: 1
+    max_length:
+        warning: 50
+        error: 60
+identifier_name:
+  excluded: # excluded via string array
+    - id
+    - x
+    - y
+excluded: 
+- Pods
+
+
+

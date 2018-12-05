@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class BasicCircleMenuButton : UIButton {
+public class BasicCircleMenuButton: UIButton {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         layer.shadowColor = UIColor.black.cgColor
